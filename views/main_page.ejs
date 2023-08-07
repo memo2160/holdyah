@@ -1,0 +1,75 @@
+<%- include('./partials/head.ejs'); %>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Search By Pin</h1>
+      <p class="lead">Search for the Hold Order by entering the pin</p>
+      <%- include('./partials/search-bar.ejs'); %>
+
+    </div>
+
+    <div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Hold For Self</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>This choice is intended for individuals who have tasks to run or need you to hold something on their behalf, with the intention of retrieving it later</li>
+            </ul>
+            <form action="/self-hold">
+              
+              <input type="submit" class="btn btn-lg btn-block btn-outline-primary" value="Create Hold">
+            </form>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Hold For Someone Else</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>This option is great for individuals who wish to drop off a package for someone else to collect at a later time. (Mostly For Individuals Who Sell Online)</li>
+              
+            </ul>
+            <form action="/Create-Order">
+              
+              <input type="submit" class="btn btn-lg btn-block btn-outline-primary" value="Create Hold">
+            </form>
+            
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal" id="displayValue">Hold Price</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <p class="card-text">Lets figure out how much that hold will be for:</p>
+               <input type="text" id="myTextBox" />
+              
+            </ul>
+           
+              
+              <button id="displayButton" class="btn btn-lg btn-block btn-outline-primary">Calculate</button>
+            
+            
+          </div>
+        </div>
+      </div>
+
+      
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    // When the button is clicked, get the text box value and display it
+    $("#displayButton").click(function () {
+      var textBoxValue = $("#myTextBox").val(); // Get the value of the text box
+      var holdPrice = Math.floor(parseInt(textBoxValue) * <%= hourlyPrice%>);
+      $("#displayValue").text("Price $: " + holdPrice); // Display the value in a div with ID "displayValue"
+    });
+  });
+</script>
+   
+    <%- include('./partials/foot.ejs'); %>

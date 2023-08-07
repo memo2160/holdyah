@@ -1,0 +1,33 @@
+<%- include('../partials/head.ejs'); %>
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Pin</th>
+            <th scope="col">Dropper</th>
+            <th scope="col">Reciever</th>
+            <th scope="col">Package Description</th>
+            <th scope="col">Hours Paid For</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <% for(var i = 0; i < result.length; i++){%>
+                <tr>
+               
+                <td><a href="/search/<%= result[i].pin %>"><%= result[i].pin %></a></td>
+                <td><%= result[i].d_fname %> <%= result[i].d_lname %></td>
+                <td><%= result[i].r_fname %> <%= result[i].r_lname %></td>
+                <td><%= result[i].package_description %></td>
+                <td><%= Math.floor(result[i].proposed_time_hold/60) %></td>
+            </tr>
+              <% }; %>
+          
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+  
+<%- include('../partials/foot.ejs'); %>

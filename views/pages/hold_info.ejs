@@ -1,0 +1,70 @@
+<%- include('../partials/head.ejs'); %>
+     
+
+            <div class="container">
+              <table >
+                <tr>
+                  <td>Dropper First Name: </td>
+                  <td><%=d_fname%> </td>
+                  </tr>
+                  <tr>
+                  <td>Dropper Last Name: </td>
+                  <td><%=d_lname %> </td>
+                </tr>
+                <tr>
+                  <td>Dropper Phone #</td>
+                  <td><%=d_tel%> </td>
+                </tr>
+                <tr>
+                  <td>Dropper E-mail: </td>
+                  <td><%=d_email%> </td>
+                </tr>
+                <tr>
+                  <td>Reciever First Name: </td>
+                  <td><%=r_fname%> </td>
+                </tr>
+                <tr>
+                  <td>Reciever Last Name: </td>
+                  <td><%=r_lname %> </td>
+                </tr>
+                <tr>
+                  <td>Reciever Phone: </td>
+                  <td><%=r_tel%> </td>
+                </tr>
+                <tr>
+                  <td>Reciever Email </td>
+                  <td><%=r_email%> </td>
+                </tr>
+                <tr>
+                  <td>Package Description: </td>
+                  <td><%=package_des%> </td>
+                </tr>
+                <tr>
+                  <td>Proposed Hold Time: </td>
+                  <td><%=hold_time %> </td>
+                </tr>
+                <tr>
+                  <td>Final Hold Time: </td>
+                  <td><%=final_hold_time %> </td>
+                </tr>
+                <tr>
+                  <td>Hold Pin:</td>
+                  <td><%=order_pin%> </td>
+                </tr>
+                <tr>
+                  <td>Order Status: </td>
+                  <td><%=hold_status%> </td>
+                </tr> 
+                <tr>
+                  <td>Qouted Price: </td>
+                  <td><%=cost_of_hold%> </td>
+                </tr>     
+                <tr>
+                  <td>Final Price: </td>
+                  <td><%=actual_cost_of_hold%> </td>
+                </tr>        
+              </table>
+
+           
+            <%- include('../partials/hold_info_button.ejs'); %>
+            <%- include('../partials/foot.ejs'); %>

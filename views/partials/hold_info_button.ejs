@@ -1,0 +1,63 @@
+<% if(hold_status == 'Active'){ %>
+    <div class="row">
+      <div class="col">
+        <form action="/close_hold" method="POST">
+          <input type="hidden" id="hold_pin" name="hold_pin" value="<%=order_pin%>">
+          <input type="submit" value="Close Hold" id="" class="btn btn-primary">
+        </form> 
+      </div>
+      <div class="col">
+        <form action="/" method="GET">
+          <input type="hidden" id="home_label" name="home_label">
+          <input type="submit" value="Home" id="home" class="btn btn-primary">
+        </form> 
+      </div>
+    </div>
+   <% }else if(hold_status == 'estimate'){ %>
+
+    <div class="row">
+      <div class="col">
+        <form action="/activate_hold/<%=order_pin%>" method="POST">
+          <input type="hidden" id="fname_r" name="fname_r" value="<%=r_fname%>">
+          <input type="hidden" id="set_active" name="set_active" value="<%=order_pin%>">
+          <input type="hidden" id="email_dropper" name="email_dropper" value="<%=d_email%>">
+          <input type="hidden" id="email_reciever" name="email_reciever" value="<%=r_email%>">
+          <input type="submit" value="Place Hold" id="set_active" class="btn btn-primary">
+        </form> 
+      </div>
+      <div class="col">
+        <form action="/" method="GET">
+          <input type="hidden" id="home_label" name="home_label">
+          <input type="submit" value="Home" id="home" class="btn btn-primary">
+        </form> 
+      </div>
+      <div class="col">
+        <form action="/editHold/<%=order_pin%>" method="POST">
+          <input type="hidden" id="edit_order_pin" name="edit_order_pin">
+          <input type="submit" value="Edit Hold" id="cancel_hold_btn" class="btn btn-primary">
+        </form> 
+      </div>
+      <div class="col">
+        <form action="/cancelHold/<%=order_pin%>" method="POST">
+          <input type="hidden" id="cancel_order_pin" name="cancel_order_pin">
+          <input type="submit" value="Cancel Hold" id="cancel_hold_btn" class="btn btn-primary">
+        </form> 
+      </div>
+    </div>
+    
+  
+   
+    
+    
+    <% }else{ %>
+      <div class="row">
+        <div class="col">
+          <form action="/" method="GET">
+            <input type="hidden" id="home_label" name="home_label">
+            <input type="submit" value="Home" id="home"  class="btn btn-primary">
+          </form> 
+          <% } %>
+        </div>
+      </div>
+      
+  </div>

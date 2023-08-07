@@ -1,0 +1,69 @@
+<%- include('../partials/head.ejs'); %>
+
+<div class="container">
+<form action="/request" method="POST" >
+   
+        <div class="row">
+            <div class="col">
+                <label for="dropper_fname">Dropper First Name</label><br>
+            <input type="text" id="d_fname" name="d_fname"><br>
+          </div>
+          <div class="col">
+            <label for="dropper_lname">Dropper Last Name</label><br>
+        <input type="text" id="d_lname" name="d_lname"><br>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="dropper_phone">Dropper phone</label><br>
+                <input type="tel" id="d_tel" name="d_tel"><br>
+            </div>
+            <div class="col">
+                <label for="dropper_email">Dropper Email</label><br>
+                <input type="email" id="d_email" name="d_email"><br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <label for="reciever_fname">Reciever First Name</label><br>
+                <input type="text" id="r_fname" name="r_fname"><br>
+            </div>
+            <div class="col">
+                <label for="reciever_lname">Reciever Last Name</label><br>
+                <input type="text" id="r_lname" name="r_lname"><br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <label for="reciever_phone">Reciever phone</label><br>
+                <input type="tel" id="r_tel" name="r_tel"><br>
+            </div>
+            <div class="col">
+                <label for="reciever_email">Reciever Email</label><br>
+                <input type="email" id="r_email" name="r_email"><br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <label for="package_description">Package Package description</label><br>
+                <input type="text" id="package_description" name="package_description"><br>
+            </div>
+            <div class="col">
+                <label for="h_minutes">Hours(Min 3 Hours)</label><br>
+                <input type="number" id="h_hours" name="h_hours"><br>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col">
+            <br>
+            <br>
+            <input type="submit" value="Submit" class="btn btn-primary">
+            
+          </div>
+          
+        </div> 
+</form>
+</div>
+
+
+<%- include('../partials/foot.ejs'); %>
